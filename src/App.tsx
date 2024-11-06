@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 function App() {
 
   useEffect(() => {
-    document.title = "Wowtop Admin"
+    document.title = "7Wealth Admin"
   }, []);
 
   return (

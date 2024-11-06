@@ -114,10 +114,10 @@ function News() {
     <div className="h-full p-4">
       <div className="flex mb-4">
         <div className="m-auto">
-          <span className="px-6 p-2 rounded-full bg-[#84571B] uppercase font-bold text-2xl">Quản lý Tin tức</span>
+          <span className="px-6 p-2 rounded-full bg-[#24652c] uppercase font-bold text-2xl">Quản lý Tin tức</span>
         </div>
         <div
-          className="bg-[#84571B] rounded-md cursor-pointer h-full px-4 py-2 flex items-center justify-center hover:opacity-80 duration-300 text-white"
+          className="bg-[#24652c] rounded-md cursor-pointer h-full px-4 py-2 flex items-center justify-center hover:opacity-80 duration-300 text-white"
           onClick={() => setOpenAddModal(true)}
         >
           Thêm mới
@@ -132,7 +132,7 @@ function News() {
           components: {
             Table: {
               borderColor: "black",
-              headerBg: "#84571B !important",
+              headerBg: "#24652c !important",
               headerColor: "white",
             }
           }

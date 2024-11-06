@@ -125,7 +125,7 @@ function Order() {
     <div className="h-full p-4">
       <div className="flex mb-4">
         <div className="m-auto">
-          <span className="px-6 p-2 rounded-full bg-[#84571B] uppercase font-bold text-2xl">Quản lý Đơn hàng</span>
+          <span className="px-6 p-2 rounded-full bg-[#24652c] uppercase font-bold text-2xl">Quản lý Đơn hàng</span>
         </div>
       </div>
       <ConfigProvider
@@ -136,7 +136,7 @@ function Order() {
           components: {
             Table: {
               borderColor: "black",
-              headerBg: "#84571B !important",
+              headerBg: "#24652c !important",
               headerColor: "white",
             }
           }

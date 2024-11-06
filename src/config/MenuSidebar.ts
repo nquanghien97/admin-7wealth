@@ -6,8 +6,8 @@ export const MenuSidebar = [
   },
   {
     key: 2,
-    title: 'Dự đoán chiều cao',
-    path: 'du-doan-chieu-cao',
+    title: 'Sản phẩm',
+    path: 'san-pham'
   },
   {
     key: 3,

@@ -41,7 +41,7 @@ function Login() {
     <>
       <div className="bg-[url('./assets/background-login.jpg')] bg-no-repeat bg-auto w-screen h-screen bg-center flex items-center justify-center">
         <div className="md:w-6/12 bg-white opacity-80 rounded-md p-8">
-          <div className="text-[#84571B] uppercase text-3xl font-bold py-8 text-center">
+          <div className="text-[#24652c] uppercase text-3xl font-bold py-8 text-center">
             <p>Đăng nhập</p>
           </div>
           <Form

@@ -15,7 +15,7 @@ function SidebarItem(props: SidebarItemProps) {
       <Link to={path}>
         <Button
           color={activePath}
-          className="!text-white py-6 text-sm drop-shadow-[1px_2px_rgba(0,0,0,0.4)] w-full bg-[#84571B] hover:!bg-[#c58229] duration-300"
+          className="!text-white py-6 text-sm drop-shadow-[1px_2px_rgba(0,0,0,0.4)] w-full bg-[#24652c] hover:!bg-[#c58229] duration-300"
         >
           {title}
         </Button>

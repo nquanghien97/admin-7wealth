@@ -7,7 +7,7 @@ import SidebarItem from "../components/SidebarItem"
 function Layout() {
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 h-[60px] bg-[#84571B] z-[100]">
+      <div className="fixed top-0 left-0 right-0 h-[60px] bg-[#24652c] z-[100]">
         <div className="relative top-0 h-full">
           <div className="flex items-center justify-end h-full gap-4 px-4">
             {/* <div className="px-2 py-1 rounded-md text-white">{user.name}</div> */}
