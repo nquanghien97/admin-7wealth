@@ -9,13 +9,12 @@ interface SidebarItemProps {
 function SidebarItem(props: SidebarItemProps) {
   const location = useLocation();
   const { title, path } = props;
-  const activePath = location.pathname === path ? 'normal' : 'info'
+  const activePath = `/${path}` === location.pathname
   return (
     <div className="w-[140px] ">
       <Link to={path}>
         <Button
-          color={activePath}
-          className="!text-white py-6 text-sm drop-shadow-[1px_2px_rgba(0,0,0,0.4)] w-full bg-[#24652c] hover:!bg-[#c58229] duration-300"
+          className={`!text-white py-6 text-sm drop-shadow-[1px_2px_rgba(0,0,0,0.4)] w-full duration-300 ${activePath ? '!bg-[#c58229]' : 'bg-[#24652c] hover:!bg-[#c58229]'}`}
         >
           {title}
         </Button>
