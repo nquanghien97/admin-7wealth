@@ -1,25 +1,39 @@
 import { TableColumnsType, Button, Table, ConfigProvider } from 'antd'
 import { useEffect, useState } from 'react';
-import { NewsEntity } from '../../entities/News';
 import CloseIcon from '../../assets/icons/CloseIcon';
-import DeleteNews from './actions/Delete';
+import DeleteJob from './actions/Delete';
 import withAuth from '../../hocs/withAuth';
 import { getAllCandidate } from '../../services/candidate_information';
 import DownloadIcon from '../../assets/icons/DownloadIcon';
 import { formatDate } from '../../utils/formatDate';
+import Header from './Header';
+import { JobEntity } from '../../entities/Job';
 
-function News() {
+export interface SearchFormType {
+  full_name?: string;
+  phone_number?: string;
+  page: number;
+  pageSize: number;
+}
+
+function Job() {
 
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<NewsEntity[]>([]);
+  const [data, setData] = useState<JobEntity[]>([]);
   const [paging, setPaging] = useState({
     page: 1,
     pageSize: 10,
     total: 20
   })
   const [refreshKey, setRefreshKey] = useState(false);
-  const [idNews, setIdNews] = useState(-1);
+  const [idJob, setIdJob] = useState(-1);
+  const [searchForm, setSearchForm] = useState<SearchFormType>({
+    page: 1,
+    pageSize: 10,
+    phone_number: '',
+    full_name: '',
+  })
 
   useEffect(() => {
     document.title = "Tin tức"
@@ -112,7 +126,7 @@ function News() {
                 className="w-full"
                 onClick={() => {
                   setOpenDeleteModal(true)
-                  setIdNews(record.id)
+                  setIdJob(record.id)
                 }}
               >
                 <p>Xóa</p>
@@ -124,10 +138,10 @@ function News() {
     }
   ]
 
-  const fetchData = async ({ page, pageSize }: { page: number, pageSize: number }) => {
+  const fetchData = async (searchForm: SearchFormType) => {
     setLoading(true);
     try {
-      const res = await getAllCandidate({ page, pageSize });
+      const res = await getAllCandidate(searchForm);
       setData(res.data.data);
       setPaging(res.data.paging)
     } catch (err) {
@@ -139,9 +153,9 @@ function News() {
 
   useEffect(() => {
     (async () => {
-      await fetchData({ page: paging.page, pageSize: paging.pageSize })
+      await fetchData(searchForm)
     })()
-  }, [paging.page, paging.pageSize, refreshKey])
+  }, [refreshKey, searchForm])
 
   const onChangePaging = async (page: number, pageSize: number) => {
     setPaging({
@@ -149,10 +163,17 @@ function News() {
       page,
       pageSize
     })
+    setSearchForm({...searchForm, page, pageSize})
   }
 
   return (
     <div className="h-full p-4">
+      <Header setLoading={setLoading} setSearchForm={setSearchForm} />
+      <div className="flex mb-4">
+        <div className="m-auto">
+          <span className="px-6 p-2 rounded-full bg-[#24652c] uppercase font-bold text-2xl">Quản lý Công việc</span>
+        </div>
+      </div>
       <ConfigProvider
         theme={{
           token: {
@@ -184,11 +205,11 @@ function News() {
           scroll={{ y: 700 }}
         />
       </ConfigProvider>
-      {openDeleteModal && <DeleteNews open={openDeleteModal} onCancel={() => setOpenDeleteModal(false)} id={idNews} setRefreshKey={setRefreshKey} />}
+      {openDeleteModal && <DeleteJob open={openDeleteModal} onCancel={() => setOpenDeleteModal(false)} id={idJob} setRefreshKey={setRefreshKey} />}
     </div>
   )
 }
 
-const NewsWithAuth = withAuth(News)
+const JobWithAuth = withAuth(Job)
 
-export default NewsWithAuth
+export default JobWithAuth
