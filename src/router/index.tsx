@@ -4,7 +4,7 @@ import Layout from "../layout";
 import Home from "../pages/Home";
 import News from "../pages/news";
 import Order from "../pages/Order";
-import Product from "../pages/Product";
+import Products from "../pages/Products";
 import CandidateInformation from "../pages/candidate-information";
 import Jobs from "../pages/jobs";
 
@@ -17,7 +17,7 @@ const router = createBrowserRouter(
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/tin-tuc" element={<News />} />
-        <Route path="/san-pham" element={<Product />} />
+        <Route path="/san-pham" element={<Products />} />
         <Route path="/don-hang" element={<Order />} />
         <Route path="/viec-lam" element={<Jobs />} />
         <Route path="/thong-tin-ung-vien" element={<CandidateInformation />} />

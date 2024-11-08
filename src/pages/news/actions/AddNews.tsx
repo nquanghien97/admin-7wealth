@@ -66,11 +66,11 @@ function AddNews(props: AddNewsProps) {
       className='!p-0 !w-4/6 !top-4'
       footer={false}
     >
-      <div className="w-full text-center p-3 h-[60px] leading-[36px] bg-[#24652c] rounded-t-lg uppercase font-bold">Thêm Tin tức</div>
+      <div className="w-full text-center p-3 h-[60px] leading-[36px] bg-[#84571B] rounded-t-lg uppercase font-bold">Thêm Tin tức</div>
       <div className="p-4">
         <Form form={form} className="flex flex-col gap-6" onFinish={onFinish}>
           <div className="flex items-center h-[40px]">
-            <p className="w-[120px] text-left text-[#24652c]">Tiêu đề</p>
+            <p className="w-[120px] text-left text-[#84571B]">Tiêu đề</p>
             <Form.Item
               className="!mb-0 w-full"
               name="title"
@@ -86,7 +86,7 @@ function AddNews(props: AddNewsProps) {
           </div>
           <div className="flex items-center flex-col">
             <div className="flex items-center w-full h-full">
-              <p className="w-[120px] text-left text-[#24652c]">Hình ảnh</p>
+              <p className="w-[120px] text-left text-[#84571B]">Hình ảnh</p>
               <Form.Item
                 className="!mb-0 w-full"
                 name="images"
@@ -110,7 +110,7 @@ function AddNews(props: AddNewsProps) {
             )}
           </div>
           <div className="flex items-center">
-            <p className="w-[106px] text-left text-[#24652c]">Nội dung</p>
+            <p className="w-[106px] text-left text-[#84571B]">Nội dung</p>
             <Editor
               apiKey="hkoepxco9p2gme5kius6axtlk3n83yberu5a59m56l7dhgn3"
               value={content}

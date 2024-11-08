@@ -171,7 +171,7 @@ function Job() {
       <Header setLoading={setLoading} setSearchForm={setSearchForm} />
       <div className="flex mb-4">
         <div className="m-auto">
-          <span className="px-6 p-2 rounded-full bg-[#24652c] uppercase font-bold text-2xl">Quản lý Công việc</span>
+          <span className="px-6 p-2 rounded-full bg-[#24652c] uppercase font-bold text-2xl">Quản lý Ứng viên</span>
         </div>
       </div>
       <ConfigProvider
